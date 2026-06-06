@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#F1ECDE" />
+  <title>LB & WJ · 十年纪念</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%23F1ECDE'/%3E%3Ctext x='32' y='38' text-anchor='middle' font-size='20' fill='%231A1A18' font-family='serif'%3EW%26L%3C/text%3E%3C/svg%3E" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Noto+Serif+SC:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <a class="skip-link" href="#main">跳到主要内容</a>
+  <div class="grain" aria-hidden="true"></div>
+
+  <section id="gate" class="gate" aria-label="进入前的问题">
+    <div class="gate__shell">
+      <p class="eyebrow">PRIVATE EDITION · 2016—2026</p>
+      <h1>一封只给你的信</h1>
+      <p class="gate__copy">有些话不好意思当面说，就把它们装进这本小小的纪念册里。</p>
+      <div class="gate__form">
+        <label id="gateQuestion" for="gateInput"></label>
+        <input id="gateInput" type="text" autocomplete="off" placeholder="答案" />
+        <button id="gateSubmit" type="button">打开</button>
+        <p id="gateHint" class="gate__hint"></p>
+        <p id="gateError" class="gate__error" role="status"></p>
+      </div>
+    </div>
+  </section>
+
+  <main id="main" class="site hidden">
+    <nav class="topbar" aria-label="页面导航">
+      <a href="#cover" class="topbar__brand">WJ/LB</a>
+      <div class="topbar__links">
+        <a href="#story">Story</a>
+        <a href="#atlas">Photos</a>
+        <a href="#letter-section">Letter</a>
+      </div>
+    </nav>
+
+    <section id="cover" class="hero section-screen">
+      <div class="hero__text reveal">
+        <p class="eyebrow" id="heroSubtitle"></p>
+        <h1 id="heroTitle"></h1>
+        <p class="hero__theme" id="heroTheme"></p>
+        <div class="hero__meta">
+          <span id="heroWedding"></span>
+          <span id="heroCounter"></span>
+        </div>
+      </div>
+      <div class="hero__photos reveal" id="heroPhotos" aria-label="十年照片封面"></div>
+      <a class="scroll-cue" href="#prologue">往下翻</a>
+    </section>
+
+    <section id="prologue" class="prologue section-narrow reveal">
+      <p class="eyebrow">PROLOGUE</p>
+      <div id="prologueLines" class="prologue__lines"></div>
+    </section>
+
+    <section id="story" class="story section-wide">
+      <div class="section-heading reveal">
+        <p class="eyebrow">OUR ORDINARY HAPPINESS</p>
+        <h2>这十年</h2>
+        <p>把照片按年份放回故事里：相识、家、婚礼、孩子、老家、旅行，以及继续往前走的日子。</p>
+      </div>
+      <div id="chapters" class="chapters"></div>
+    </section>
+
+    <section id="atlas" class="atlas section-wide">
+      <div class="section-heading reveal">
+        <p class="eyebrow">PHOTO ATLAS</p>
+        <h2>这些照片，都是证据</h2>
+        <p>不是精选几张，而是把文件夹里的素材都放进来。每一张都算数。</p>
+      </div>
+      <div id="photoAtlas" class="photo-atlas"></div>
+    </section>
+
+    <section id="letter-section" class="letter-section section-narrow reveal">
+      <p class="eyebrow">LETTER</p>
+      <h2>给你</h2>
+      <p class="letter-tip">慢慢打出来。如果你等不及，点一下信纸可以直接展开。</p>
+      <article id="letter" class="letter" aria-live="polite"></article>
+    </section>
+
+    <section class="finale section-narrow reveal">
+      <button id="surpriseTrigger" class="finale__trigger" type="button"></button>
+      <div id="surpriseContent" class="finale__content hidden"></div>
+    </section>
+
+    <footer class="footer">
+      <p id="footerText"></p>
+      <small>WJ & LB · A private web album for the tenth year</small>
+    </footer>
+  </main>
+
+  <div id="lightbox" class="lightbox hidden" role="dialog" aria-modal="true" aria-label="照片查看器">
+    <button id="lightboxClose" class="lightbox__button lightbox__close" type="button" aria-label="关闭">×</button>
+    <button id="lightboxPrev" class="lightbox__button lightbox__prev" type="button" aria-label="上一张">‹</button>
+    <figure class="lightbox__figure">
+      <img id="lightboxImg" src="" alt="" />
+      <figcaption id="lightboxCaption"></figcaption>
+    </figure>
+    <button id="lightboxNext" class="lightbox__button lightbox__next" type="button" aria-label="下一张">›</button>
+  </div>
+
+  <div id="musicControl" class="music hidden" aria-label="音乐控制">
+    <button id="musicToggle" type="button" aria-label="播放或暂停音乐">♪</button>
+    <span id="musicLabel"></span>
+  </div>
+
+  <audio id="audio" loop preload="auto"></audio>
+  <script src="data.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
